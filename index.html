@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title> Physics </title>
+</head>
+
+<body onload="setup()">
+  <div class="params-holder">
+    <div class="param">
+      <div class="text"> Частота несущего колебания (рад/с)</div>
+      <input size="4" type="number" step="any" id="w_c" class="input" />
+    </div>
+    <div class="param">
+      <div class="text"> Амплитуда несущего колебания (В)</div>
+      <input size="4" type="number" step="any" id="U_c" class="input" />
+    </div>
+    <div class="param">
+      <div class="text"> Частота информационного сигнала (рад/с)</div>
+      <input size="4" type="number" step="any" id="w_m" class="input" />
+    </div>
+    <div class="param">
+      <div class="text"> Амплитуда информационного сигнала (В)</div>
+      <input size="4" type="number" step="any" id="U_m" class="input" />
+    </div>
+    <div class="param">
+      <div class="text"> Коэффициент модуляции</div>
+      <input size="4" type="number" step="any" id="m" class="input" />
+    </div>
+    <div class="param">
+      <button class="button" id="run" onclick="run()">
+        Модулировать
+      </button>
+    </div>
+  </div>
+
+  <div class="canvas-list">
+    <div class="canvas-holder">
+      <canvas id="canvasC" />
+    </div>
+    <div class="canvas-holder">
+      <canvas id="canvasM" />
+    </div>
+    <div class="canvas-holder">
+      <canvas id="canvasAM" />
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="heading"> <b> Источники информации </b> </div>
+    <ul>
+      <li> TODO
+      </li>
+    </ul>
+
+    Исходный код доступ на <a href="https://github.com/3450a42e848dac51d24b44dc8cfb360b/07">github</a>.
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/3.0.1/chartjs-plugin-annotation.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
