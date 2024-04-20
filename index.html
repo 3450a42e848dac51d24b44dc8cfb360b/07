@@ -12,16 +12,16 @@
 <body onload="setup()">
   <div class="params-holder">
     <div class="param">
-      <div class="text"> Частота несущего колебания (рад/с)</div>
-      <input size="4" type="number" step="any" id="w_c" class="input" />
+      <div class="text"> Частота несущего колебания (Гц)</div>
+      <input size="4" type="number" step="any" id="f_c" class="input" />
     </div>
     <div class="param">
       <div class="text"> Амплитуда несущего колебания (В)</div>
       <input size="4" type="number" step="any" id="U_c" class="input" />
     </div>
     <div class="param">
-      <div class="text"> Частота информационного сигнала (рад/с)</div>
-      <input size="4" type="number" step="any" id="w_m" class="input" />
+      <div class="text"> Частота информационного сигнала (Гц)</div>
+      <input size="4" type="number" step="any" id="f_m" class="input" />
     </div>
     <div class="param">
       <div class="text"> Амплитуда информационного сигнала (В)</div>
@@ -47,6 +47,15 @@
     </div>
     <div class="canvas-holder">
       <canvas id="canvasAM" />
+    </div>
+    <div class="canvas-holder">
+      <canvas id="canvasSC" />
+    </div>
+    <div class="canvas-holder">
+      <canvas id="canvasSM" />
+    </div>
+    <div class="canvas-holder">
+      <canvas id="canvasSAM" />
     </div>
   </div>
 
