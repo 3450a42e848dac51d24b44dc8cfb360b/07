@@ -201,7 +201,7 @@ const make_plotSM = (data) => {
     data: {
       datasets: [
         {
-          label: "Спект информационного сигнала",
+          label: "Спектр информационного сигнала",
           borderColor: "rgba(200, 77, 123, .8)",
           data: data,
           lineTension: 0.4,
