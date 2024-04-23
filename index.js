@@ -38,15 +38,14 @@ const setup = () => {
     data: { datasets: [] },
   });
 
-  const [f_c, U_c, f_m, U_m, m] = [20, 7, 3, 2, 0.8];
+  const [f_c, U_c, f_m, U_m] = [20, 7, 3, 5];
 
   document.getElementById("f_c").value = f_c;
   document.getElementById("U_c").value = U_c;
   document.getElementById("f_m").value = f_m;
   document.getElementById("U_m").value = U_m;
-  document.getElementById("m").value = m;
 
-  make_plots(make_data(f_c, U_c, f_m, U_m, m));
+  make_plots(make_data(f_c, U_c, f_m, U_m));
 }
 
 const make_plotC = (data) => {
@@ -323,9 +322,10 @@ const make_data_c = (f_c, U_c) => {
   return result;
 }
 
-const make_data = (f_c, U_c, f_m, U_m, m) => {
+const make_data = (f_c, U_c, f_m, U_m) => {
   const result = {C: [], M: [], AM: [], SC: [], SM: [], SAM: []};
   const POINTS = 8192;
+  const m = U_m / U_c;
 
   const left_border = 0;
   const right_border = 3 / f_m;
@@ -362,19 +362,18 @@ const parse_input = () => {
     parseFloat(document.getElementById("U_c").value),
     parseFloat(document.getElementById("f_m").value),
     parseFloat(document.getElementById("U_m").value),
-    parseFloat(document.getElementById("m").value),
   ]
 }
 
 const run = () => {
-  const [f_c, U_c, f_m, U_m, m] = parse_input();
-  if (isNaN(f_c) || isNaN(U_c) || isNaN(f_m) || isNaN(U_m) || isNaN(m)) {
+  const [f_c, U_c, f_m, U_m] = parse_input();
+  if (isNaN(f_c) || isNaN(U_c) || isNaN(f_m) || isNaN(U_m)) {
     alert("Некорретный ввод!");
     return;
   }
-  if (f_c <= 0 || U_c <= 0 || f_m <= 0 || U_m <= 0 || m <= 0) {
+  if (f_c <= 0 || U_c <= 0 || f_m <= 0 || U_m <= 0) {
     alert("Некорретный ввод!");
     return;
   }
-  make_plots(make_data(f_c, U_c, f_m, U_m, m));
+  make_plots(make_data(f_c, U_c, f_m, U_m));
 }
